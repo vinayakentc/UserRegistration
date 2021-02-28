@@ -8,7 +8,7 @@ public class UserRegistrationMain {
 
 	Scanner in = new Scanner(System.in);
 
-	public boolean firstNameValidator(String firstName) {
+	public boolean firstNameValidator(String firstName) throws UserRegistrationException  {
 		//System.out.println("enter your first name");
 		//System.out.println("first name should start with uppercase and have min 3 characters");
 		//String firstName = in.next();
@@ -23,7 +23,7 @@ public class UserRegistrationMain {
 
 	}
 
-	public boolean lastNameValidator(String lastName) {
+	public boolean lastNameValidator(String lastName) throws UserRegistrationException  {
 		//System.out.println("enter your last name");
 		//System.out.println("last name should start with uppercase and have min 3 characters");
 		//String lastName = in.next();
@@ -38,7 +38,7 @@ public class UserRegistrationMain {
 
 	}
 
-	public boolean emailValidator(String  email) {
+	public boolean emailValidator(String  email) throws UserRegistrationException {
 		//System.out.println("Enter your Email :");
         //String email = in.next();
 		Pattern pattern = Pattern.compile("^([a-z]){1,}[a-z0-9]*([.+_-]){0,1}[0-9a-z]+(@){1}([0-9a-z]+)(\\.([a-z]){2,}){1}(\\.[a-z]{2,})?$");
@@ -51,7 +51,7 @@ public class UserRegistrationMain {
 		return b;  
 	}
 
-	public boolean mobileNoValidator(String mobileNo) {
+	public boolean mobileNoValidator(String mobileNo) throws UserRegistrationException {
 		//System.out.println("Enter your Mobile No :");
 		//String mobileNo = in.nextLine();
 		Pattern pattern = Pattern.compile("^\\d{2} [1-9]\\d{9}$");
@@ -64,7 +64,7 @@ public class UserRegistrationMain {
 		return b;
 	}
 
-	public boolean passwordValidator(String password) {
+	public boolean passwordValidator(String password) throws UserRegistrationException {
 		//System.out.println("Enter your Password :");
 		//String password = in.next();
 		Pattern pattern = Pattern.compile("^(?=.*\\d)(?=.*[A-Z])(?=.*\\W)(?!.*\\W\\w*\\W)(?!.*\\s).{8,}$");
@@ -80,7 +80,7 @@ public class UserRegistrationMain {
 	public static void main(String[] args) {
 		System.out.println("Welcome to user registration system");
 
-		UserRegistrationMain newUser = new UserRegistrationMain();
+		//UserRegistrationMain newUser = new UserRegistrationMain();
 
 		// first name validator
 		//newUser.firstNameValidator();
